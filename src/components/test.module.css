@@ -1,0 +1,50 @@
+.data {
+    color: blue
+}
+
+.test {
+    color: red
+}
+
+.title {
+    color: orange;
+    font-size: 50px;
+}
+
+.description {
+    color: black;
+    font-size: 30px;
+}
+
+.counter {
+
+    font-size: 50px;
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+    border-width: 5px;
+
+}
+
+.like {
+    font-size: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 5%;
+    border-width: 5px;
+    background-color: red;
+}
+
+.dislike {
+    font-size: 50px;
+    height: 20px;
+    width: 20px;
+    border-radius: 5%;
+    border-width: 5px;
+    background-color: blue;
+}
+
+.likes_construction {
+    display: flex;
+    justify-content: center;
+}

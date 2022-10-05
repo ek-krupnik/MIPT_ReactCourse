@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Duck",
+    "text": "The best bird in the world. Feed only with special food!",
+    "currentLikes": 999
+  },
+  {
+    "title": "Racoon",
+    "text": "Raccoon. Not the best candidate for the role of a pet, but it just rocks",
+    "currentLikes": 200
+  },
+  {
+    "title": "Lama",
+    "text": "Just cool and beautiful",
+    "currentLikes": 300
+  },
+  {
+    "title": "Alpaca",
+    "text": "Many often confuse them with Lamas, but true connoisseurs know the difference",
+    "currentLikes": 500
+  },
+  {
+    "title": "Capybara",
+    "text": "Needs no introduction",
+    "currentLikes": 999
+  }
+]
