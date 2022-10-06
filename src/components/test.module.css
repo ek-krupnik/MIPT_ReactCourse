@@ -56,6 +56,10 @@
     background-image: url('../images/dislike_set.png');
 }
 
+/* .dislike:hover::after {
+    content: attr("Siriously?");
+} */
+
 .dislike:active {
     background-image: url('../images/dislike_red.png');
 }
@@ -79,9 +83,29 @@
     top: 0;
     left: 0;
     position: relative;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.dislike .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    height: 25px;
+
+    background-color: rgb(61, 61, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 8%;
+
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+    
+
+.dislike:hover .tooltiptext {
+    visibility: visible;
 }

@@ -59,7 +59,9 @@ export function Test(props) {
             <div className={s.likes_construction}>
 
 
-                <div className={s.dislike} onClick={dislike}></div>
+                <div className={s.dislike} onClick={dislike}>
+                    <span class={s.tooltiptext}> Seriously? </span>
+                </div>
 
                 <div className={s.counter} style={{backgroundColor: likes_color}}>
                     {counter}
