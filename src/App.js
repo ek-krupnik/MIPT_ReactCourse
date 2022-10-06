@@ -1,15 +1,8 @@
 import './App.css';
-import {useState} from "react"
-import {Test} from './components/test'
+import {Test} from './components/test';
 import data from './assets/mock_data.json';
 
 function App() {
-  
-    const [counter, setCounter] = useState(0)
-
-    const inc = () => {
-        setCounter (counter + 1)
-    }
 
     return (
         <div className="App">
