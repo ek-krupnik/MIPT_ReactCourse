@@ -1,53 +1,49 @@
-.data {
-    color: blue
-}
-
-.test {
-    color: red
-}
 
 .title {
-    color: orange;
+    color: rgb(255, 166, 0);
     font-size: 50px;
 }
 
 .description {
     color: black;
     font-size: 30px;
+    font-style: italic;
 }
 
 .counter {
 
     font-size: 50px;
-    height: 200px;
+    height: 80px;
     width: 200px;
     border-radius: 5%;
     border-width: 5px;
-
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 235, 205);
 }
 
 .like {
     font-size: 50px;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     border-radius: 5%;
     border-width: 5px;
-    background-color: red;
+    background-image: url('../images/like.png');
+    background-size: cover;
 }
 
-.like_set {
-    font-size: 50px;
-    height: 20px;
-    width: 20px;
-    border-radius: 5%;
-    border-width: 5px;
-    background-color: rgb(175, 30, 30);
+.like:hover {
+    background-image: url('../images/like_set.png');
+}
+
+.like:active {
+    background-image: url('../images/like_green.png');
 }
 
 .dislike {
     font-size: 50px;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
     border-radius: 5%;
     border-width: 5px;
     background-image: url('../images/dislike.png');
@@ -56,34 +52,25 @@
 
 .dislike:hover {
     background-image: url('../images/dislike_set.png');
-    background-size: cover;
 }
 
 .dislike:active {
     background-image: url('../images/dislike_red.png');
-    background-size: cover;
 }
 
 .likes_construction {
+
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }
 
 .image img {
     height: 600px;
     border-radius: 10%;
     border-width: 5px;
-    /* height: 800px;
-    width: 800px;
-    
-    object-fit: cover; */
-
-    /* img {
-        height: 100%;
-        width: auto;
-        display: block;
-        object-fit: cover;
-    } */
 }
 
 .post_data {
