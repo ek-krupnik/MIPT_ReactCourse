@@ -14,8 +14,7 @@ export function Test(props) {
     const [markerLiked, setMarkerLiked] = useState(false)
     const [markerDisliked, setMarkerDisliked] = useState(false)
 
-    const dislike_button = markerDisliked ? '../images/dislike_den.png' : '../images/dislike_den.png'
-    const like_button = markerLiked ? "red" : "green"
+    const likes_color = markerLiked ? "rgb(196, 242, 181)" : (markerDisliked ? "rgb(242, 181, 183)" : "rgb(255, 235, 205)")
 
     const like = () => {
         if (markerLiked) {
@@ -72,19 +71,15 @@ export function Test(props) {
             </div>
             <div className={s.likes_construction}>
 
-                <div className={s.dislike} 
-                     onClick={dislike} 
-                    //  style={{backgroundImage: dislike_button}} 
-                     >
+
+                <div className={s.dislike} onClick={dislike}>
                 </div>
 
-                <div className={s.counter}>
+                <div className={s.counter} style={{backgroundColor: likes_color}}>
                     {counter}
                 </div>
 
-                <div className={s.like} 
-                     onClick={like}
-                     style={{backgroundColor: like_button}}>
+                <div className={s.like} onClick={like}>
                 </div>
             </div>
         </>
