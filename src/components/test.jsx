@@ -1,42 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import s from './test.module.css'
-import {useState} from "react"
-import {useEffect} from "react"
 
-export function Test(props) {
+export function Post(props) {
 
     const title = `${props.value.title}`
     const description = `${props.value.text}`
     const likes = props.value.currentLikes
-    const image_url = `${props.value.image}`
+    const imageUrl = `${props.value.image}`
 
     const [counter, setCounter] = useState(likes)
     const [markerLiked, setMarkerLiked] = useState(false)
     const [markerDisliked, setMarkerDisliked] = useState(false)
 
-    const likes_color = markerLiked ? 
+    const likesColor = markerLiked ? 
                         "rgb(196, 242, 181)" : 
                         (markerDisliked ? "rgb(242, 181, 183)" : "rgb(255, 235, 205)")
 
     const like = () => {
         if (markerLiked) {
-            setCounter (counter - 1)
-            setMarkerLiked (false)
+            setCounter((counter) => {return counter - 1})
+            setMarkerLiked((marker) => {return false})
         }
-        if (!markerDisliked & !markerLiked) {
-            setCounter (counter + 1)
-            setMarkerLiked (true)
+        if (!markerDisliked && !markerLiked) {
+            setCounter((counter) => {return counter + 1})
+            setMarkerLiked((marker) => {return true})
         }
     }
 
     const dislike = () => {
         if (markerDisliked) {
-            setCounter (counter + 1)
-            setMarkerDisliked (false)
+            setCounter((counter) => {return counter + 1})
+            setMarkerDisliked((marker) => {return false})
         }
-        if (!markerDisliked & !markerLiked) {
-            setCounter (counter - 1)
-            setMarkerDisliked (true)
+        if (!markerDisliked && !markerLiked) {
+            setCounter((counter) => {return counter - 1})
+            setMarkerDisliked((marker) => {return true})
         }
     }
 
@@ -52,7 +50,7 @@ export function Test(props) {
                 </div>
 
                 <div className={s.image}>
-                    <img src={image_url} alt="Animal"/>
+                    <img src={imageUrl} alt="Animal"/>
                 </div>
             </div>
 
@@ -63,7 +61,7 @@ export function Test(props) {
                     <span class={s.tooltiptext}> Seriously? </span>
                 </div>
 
-                <div className={s.counter} style={{backgroundColor: likes_color}}>
+                <div className={s.counter} style={{backgroundColor: likesColor}}>
                     {counter}
                 </div>
 
