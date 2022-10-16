@@ -1,5 +1,5 @@
 import './App.css';
-import {Post} from './components/test';
+import {Post} from './components/post';
 import data from './assets/mock_data.json';
 
 function App() {

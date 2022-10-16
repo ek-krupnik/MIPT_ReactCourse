@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import s from './test.module.css'
+import s from './post.module.css'
 
 export function Post(props) {
 
