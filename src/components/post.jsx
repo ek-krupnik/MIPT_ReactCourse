@@ -3,6 +3,9 @@ import s from './post.module.css'
 
 export function Post(props) {
 
+    // console.log(props.value)
+    // const [title, description, likes, imageUrl] = props.value
+    
     const title = `${props.value.title}`
     const description = `${props.value.text}`
     const likes = props.value.currentLikes
