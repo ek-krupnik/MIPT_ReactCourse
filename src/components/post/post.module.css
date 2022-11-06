@@ -1,6 +1,7 @@
 .title {
     color: rgb(255, 166, 0);
     font-size: 50px;
+    margin-top: 50px;
 }
 
 .description {
@@ -29,16 +30,16 @@
     border-radius: 5%;
     border-width: 5px;
 
-    background-image: url('../assets/images/like.png');
+    background-image: url('../../assets/images/like.png');
     background-size: cover;
 }
 
 .like:hover {
-    background-image: url('../assets/images/like_set.png');
+    background-image: url('../../assets/images/like_set.png');
 }
 
 .like:active {
-    background-image: url('../assets/images/like_green.png');
+    background-image: url('../../assets/images/like_green.png');
 }
 
 .dislike {
@@ -48,20 +49,16 @@
     border-radius: 5%;
     border-width: 5px;
 
-    background-image: url('../assets/images/dislike.png');
+    background-image: url('../../assets/images/dislike.png');
     background-size: cover;
 }
 
 .dislike:hover {
-    background-image: url('../assets/images/dislike_set.png');
+    background-image: url('../../assets/images/dislike_set.png');
 }
 
-/* .dislike:hover::after {
-    content: attr("Siriously?");
-} */
-
 .dislike:active {
-    background-image: url('../assets/images/dislike_red.png');
+    background-image: url('../../assets/images/dislike_red.png');
 }
 
 .likes_construction {
@@ -70,7 +67,6 @@
     align-items: center;
 
     margin-top: 20px;
-    margin-bottom: 100px;
 }
 
 .image img {
@@ -108,4 +104,45 @@
 
 .dislike:hover .tooltiptext {
     visibility: visible;
+}
+
+.show_comment {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+
+    border-width: 2px;
+    border-color: rgb(221, 159, 44);
+    border-radius: 5%;
+    background-color: rgb(255, 242, 223); 
+}
+
+.comments_buttons {
+    display: flex;  
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.comment_counter {
+    font-size: 25px;
+    height: 40px;
+    width: 100px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 235, 205);
+}
+
+.comment {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url('../../assets/images/comment.png');
+    background-size: cover;
 }

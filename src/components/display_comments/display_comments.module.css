@@ -1,0 +1,11 @@
+.comment {
+    height: 40px;
+    width: 600px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    /* background-color: rgb(255, 248, 237); */
+}

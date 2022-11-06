@@ -1,20 +1,23 @@
 import React, {useState} from 'react'
 import s from './post.module.css'
+import {DataChanges} from '../data_change/data_change'
 
-export function Post(props) {
+export function Post({title,
+                      description,
+                      likes,
+                      imageUrl,
+                      comments,
+                      id}
+                    ) {
 
-    // console.log(props.value)
-    // const [title, description, likes, imageUrl] = props.value
-    
-    const title = `${props.value.title}`
-    const description = `${props.value.text}`
-    const likes = props.value.currentLikes
-    const imageUrl = `${props.value.image}`
-
+    // const [counterComments, setCounterComm] = useState()
     const [counter, setCounter] = useState(likes)
     const [markerLiked, setMarkerLiked] = useState(false)
     const [markerDisliked, setMarkerDisliked] = useState(false)
+    const [markerComment, setMarkerComment] = useState(false)
+    const commentsVision = markerComment ? "none" : "flex"
 
+    const buttonText = markerComment ? "ShowComments" : "HideComments"
     const likesColor = markerLiked ? 
                         "rgb(196, 242, 181)" : 
                         (markerDisliked ? "rgb(242, 181, 183)" : "rgb(255, 235, 205)")
@@ -41,6 +44,10 @@ export function Post(props) {
         }
     }
 
+    const showComment = () => {
+        setMarkerComment((marker) => {return !marker})
+    }
+
     return (
         <>
             <div className={s.post_data}>
@@ -59,9 +66,8 @@ export function Post(props) {
 
             <div className={s.likes_construction}>
 
-
                 <div className={s.dislike} onClick={dislike}>
-                    <span class={s.tooltiptext}> Seriously? </span>
+                    <span className={s.tooltiptext}> Seriously? </span>
                 </div>
 
                 <div className={s.counter} style={{backgroundColor: likesColor}}>
@@ -70,6 +76,19 @@ export function Post(props) {
 
                 <div className={s.like} onClick={like}></div>
             </div>
+            
+            <div className={s.comments_buttons}>
+                <div className={s.comment}></div>
+                <div className={s.comment_counter}>
+                    {comments}
+                </div>
+                <button className={s.show_comment} onClick={showComment}>
+                    {buttonText}
+                </button>
+            </div>
+            
+            <DataChanges visibility={commentsVision} id={id} commentsNum={comments}/>
+        
         </>
     )
 
