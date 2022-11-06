@@ -42,3 +42,44 @@
     border-style: solid;
     border-radius: 1%;
 }
+
+.comment_counter {
+    font-size: 25px;
+    height: 40px;
+    width: 100px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 235, 205);
+}
+
+.comment {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url('../../assets/images/comment.png');
+    background-size: cover;
+}
+
+.show_comment {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+
+    border-width: 2px;
+    border-color: rgb(221, 159, 44);
+    border-radius: 5%;
+    background-color: rgb(255, 242, 223); 
+}
+
+.comments_buttons {
+    display: flex;  
+    justify-content: center;
+    margin-top: 20px;
+}

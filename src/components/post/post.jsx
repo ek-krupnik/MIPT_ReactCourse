@@ -10,14 +10,9 @@ export function Post({title,
                       id}
                     ) {
 
-    // const [counterComments, setCounterComm] = useState()
     const [counter, setCounter] = useState(likes)
     const [markerLiked, setMarkerLiked] = useState(false)
     const [markerDisliked, setMarkerDisliked] = useState(false)
-    const [markerComment, setMarkerComment] = useState(false)
-    const commentsVision = markerComment ? "none" : "flex"
-
-    const buttonText = markerComment ? "ShowComments" : "HideComments"
     const likesColor = markerLiked ? 
                         "rgb(196, 242, 181)" : 
                         (markerDisliked ? "rgb(242, 181, 183)" : "rgb(255, 235, 205)")
@@ -42,10 +37,6 @@ export function Post({title,
             setCounter((counter) => {return counter - 1})
             setMarkerDisliked((marker) => {return true})
         }
-    }
-
-    const showComment = () => {
-        setMarkerComment((marker) => {return !marker})
     }
 
     return (
@@ -77,17 +68,7 @@ export function Post({title,
                 <div className={s.like} onClick={like}></div>
             </div>
             
-            <div className={s.comments_buttons}>
-                <div className={s.comment}></div>
-                <div className={s.comment_counter}>
-                    {comments}
-                </div>
-                <button className={s.show_comment} onClick={showComment}>
-                    {buttonText}
-                </button>
-            </div>
-            
-            <DataChanges visibility={commentsVision} id={id} commentsNum={comments}/>
+            <DataChanges id={id} commentsNum={comments}/>
         
         </>
     )
