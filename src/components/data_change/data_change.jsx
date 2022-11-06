@@ -33,7 +33,7 @@ export function DataChanges({id, commentsNum}) {
             <div className={s.comments_buttons}>
                 <div className={s.comment}></div>
                 <div className={s.comment_counter}>
-                    {commentsNum + counter}
+                    {counter}
                 </div>
                 <button className={s.show_comment} onClick={showComment}>
                     {buttonText}
@@ -42,7 +42,13 @@ export function DataChanges({id, commentsNum}) {
 
             <div className={s.common_comments}>
                 <div className={s.comments_list} style={{display : visibility}}>
-                    {arr.join('\nAnonim: ')}
+                    {arr.map(item => (<DisplayComment commentId={-1}
+                                                      articleId={id}
+                                                      text={item}
+                                                      name={'Anonimus'}
+                                                      visibility={visibility}/>
+                                                      ))}
+
                     {comments_json.map(item => (id===item.articleId ? 
                                                 <DisplayComment commentId={item.articleId}
                                                                 articleId={id}
