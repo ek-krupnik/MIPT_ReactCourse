@@ -1,15 +1,11 @@
 import React, {useState} from 'react'
 import s from './post.module.css'
 
-export function Post(props) {
-
-    // console.log(props.value)
-    // const [title, description, likes, imageUrl] = props.value
-    
-    const title = `${props.value.title}`
-    const description = `${props.value.text}`
-    const likes = props.value.currentLikes
-    const imageUrl = `${props.value.image}`
+export function Post({title,
+                      description,
+                      likes,
+                      imageUrl}
+                    ) {
 
     const [counter, setCounter] = useState(likes)
     const [markerLiked, setMarkerLiked] = useState(false)
@@ -28,6 +24,7 @@ export function Post(props) {
             setCounter((counter) => {return counter + 1})
             setMarkerLiked((marker) => {return true})
         }
+        return;
     }
 
     const dislike = () => {
@@ -39,6 +36,7 @@ export function Post(props) {
             setCounter((counter) => {return counter - 1})
             setMarkerDisliked((marker) => {return true})
         }
+        return;
     }
 
     return (

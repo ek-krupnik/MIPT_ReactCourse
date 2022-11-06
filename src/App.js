@@ -7,7 +7,12 @@ function App() {
     return (
         <div className="App">
             <div className="common">
-                {data.map(item => <Post value={item}/>)}
+                {data.map(item => <Post 
+                                    title={item.title}
+                                    description={item.text}
+                                    likes={item.currentLikes}
+                                    imageUrl={item.image}
+                                   />)}
             </div>
         </div>
   );
