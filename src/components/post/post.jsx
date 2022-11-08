@@ -41,34 +41,37 @@ export function Post({title,
 
     return (
         <>
-            <div className={s.post_data}>
-                <div className={s.title}>
-                    {title}
+
+            <div className={s.all_common}>
+                <div className={s.post_data}>
+                    <div className={s.title}>
+                        {title}
+                    </div>
+
+                    <div className={s.description}>
+                        {description}
+                    </div>
+
+                    <div className={s.image}>
+                        <img src={imageUrl} alt="Animal"/>
+                    </div>
                 </div>
 
-                <div className={s.description}>
-                    {description}
-                </div>
+                <div className={s.likes_construction}>
 
-                <div className={s.image}>
-                    <img src={imageUrl} alt="Animal"/>
+                    <div className={s.dislike} onClick={dislike}>
+                        <span className={s.tooltiptext}> Seriously? </span>
+                    </div>
+
+                    <div className={s.counter} style={{backgroundColor: likesColor}}>
+                        {counter}
+                    </div>
+
+                    <div className={s.like} onClick={like}></div>
                 </div>
+                
+                <DataChanges id={id} commentsNum={comments}/>
             </div>
-
-            <div className={s.likes_construction}>
-
-                <div className={s.dislike} onClick={dislike}>
-                    <span className={s.tooltiptext}> Seriously? </span>
-                </div>
-
-                <div className={s.counter} style={{backgroundColor: likesColor}}>
-                    {counter}
-                </div>
-
-                <div className={s.like} onClick={like}></div>
-            </div>
-            
-            <DataChanges id={id} commentsNum={comments}/>
         
         </>
     )

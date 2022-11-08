@@ -2,6 +2,8 @@
     width: 600px;
     margin-top: 5px;
     margin-left: 5px;
+    display: flex;
+    justify-content: start;
 }
 
 .delete_comment_button {
@@ -21,4 +23,5 @@
 .common_comment_line {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
 }

@@ -12,8 +12,8 @@ export function DisplayComment({commentId, articleId, text, name, visibility}) {
 
     return (
         <>
-            <div className={s.common_comment_line} onClick={hideComment} style={{display : final_visibility}}>
-                <button className={s.delete_comment_button}></button>
+            <div className={s.common_comment_line} style={{display : final_visibility}}>
+                <button className={s.delete_comment_button} onClick={hideComment}></button>
                 <div className={s.comment}>
                         {name}: {text}
                 </div>

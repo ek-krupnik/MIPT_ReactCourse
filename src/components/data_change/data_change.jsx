@@ -49,13 +49,6 @@ export function DataChanges({id, commentsNum}) {
                                                       visibility={visibility}/>))}
                     
                     <Comment articleId={id} visibility={visibility}/>
-
-                    {/* {comments_json.map(item => (id===item.articleId ? 
-                                                <Comment commentId={item.articleId}
-                                                         articleId={id}
-                                                         text={item.text}
-                                                         name={item.author}
-                                                         visibility={visibility}/> : <></>))} */}
                 </div>
 
                 <div className={s.comment_line} style={{display : visibility}}>
