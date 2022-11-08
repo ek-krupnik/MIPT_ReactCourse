@@ -2,17 +2,22 @@ import React, {useState} from 'react'
 import s from "./display_comments.module.css"
 
 export function DisplayComment({commentId, articleId, text, name, visibility}) {
+    
+    const [markerComment, setMarkerComment] = useState(false)
+    const final_visibility = markerComment ? "none" : visibility
 
-    const [arrComm, setArr] = useState([])
+    const hideComment = () => {
+        setMarkerComment((marker) => {return !marker})
+    }
 
     return (
         <>
-            <div className={s.comment} style={{display : visibility}}>
-                 {name}: {text}
+            <div className={s.common_comment_line} onClick={hideComment} style={{display : final_visibility}}>
+                <button className={s.delete_comment_button}></button>
+                <div className={s.comment}>
+                        {name}: {text}
+                </div>
             </div>
-
-
-
         </>
     )
 }

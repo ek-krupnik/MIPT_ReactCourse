@@ -1,20 +1,13 @@
-import './App.css';
-import {Post} from './components/post/post';
-import data from './assets/data/mock_data.json';
+import './App.css'
+import {Articles} from './components/article/article'
 
 function App() {
 
     return (
         <div className="App">
             <div className="common">
-                {data.map(item => <Post 
-                                    title={item.title}
-                                    description={item.text}
-                                    likes={item.currentLikes}
-                                    imageUrl={item.image}
-                                    comments={item.commentsCount}
-                                    id={item.articleId}
-                                   />)}
+                <Articles/>
+                {/* <AddArticle/> */}
             </div>
         </div>
   );

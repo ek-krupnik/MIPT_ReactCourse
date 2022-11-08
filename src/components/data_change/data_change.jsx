@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import {Comment} from "../comment/comment"
 import s from "./data_change.module.css"
-import comments_json from "../../assets/data/comments.json"
-import {DisplayComment} from "../display_comments/display_comments"
+import { CommentLine } from '../creating_comment_line/creating_comment_line'
+import { DisplayComment } from '../display_comments/display_comments'
 
 export function DataChanges({id, commentsNum}) {
 
@@ -46,19 +46,20 @@ export function DataChanges({id, commentsNum}) {
                                                       articleId={id}
                                                       text={item}
                                                       name={'Anonimus'}
-                                                      visibility={visibility}/>
-                                                      ))}
+                                                      visibility={visibility}/>))}
+                    
+                    <Comment articleId={id} visibility={visibility}/>
 
-                    {comments_json.map(item => (id===item.articleId ? 
-                                                <DisplayComment commentId={item.articleId}
-                                                                articleId={id}
-                                                                text={item.text}
-                                                                name={item.author}
-                                                                visibility={visibility}/> : <></>))}
+                    {/* {comments_json.map(item => (id===item.articleId ? 
+                                                <Comment commentId={item.articleId}
+                                                         articleId={id}
+                                                         text={item.text}
+                                                         name={item.author}
+                                                         visibility={visibility}/> : <></>))} */}
                 </div>
 
                 <div className={s.comment_line} style={{display : visibility}}>
-                    <Comment data={line} onChange={onChange} />
+                    <CommentLine data={line} onChange={onChange} />
                     <button onClick={pushLine} className={s.button}>
                         Leave comment
                     </button>

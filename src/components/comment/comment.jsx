@@ -1,21 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import s from './comment.module.css'
+import { DisplayComment } from '../display_comments/display_comments'
+import { NotReadyData } from '../not_ready_data/not_ready_data'
+import { getComments } from '../../assets/pathces/get_comments'
 
-export const Comment = ({data, onChange}) => (
-    
-    <input
-        className={s.comment_line}
-        value={data}
-        onChange={onChange}
-        placeholder={"Enter something..."}
-    />
+export function Comment({articleId, visibility}) {
 
-    // componentDidMount() {
-    // }
+    const [data, setData] = useState(null)
 
-    // componentWillUnmount()  {
-    // }
+    useEffect(() => {
+        getComments(articleId).then(fetchedData => setData(fetchedData))
+    }, [])
 
-    // render() {
-    // }
-)
+    return data
+           ? data.map(item => <DisplayComment commentId={item.articleId}
+                                              articleId={articleId}
+                                              text={item.text}
+                                              name={item.author}
+                                              visibility={visibility}/>)
+           : <NotReadyData/>
+
+}
+
+
+// should be enywhere else but...
