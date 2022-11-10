@@ -8,7 +8,7 @@ export function Post({title,
                       imageUrl,
                       comments,
                       id}
-                    ) {
+                    ){
 
     const [counter, setCounter] = useState(likes)
     const [markerLiked, setMarkerLiked] = useState(false)

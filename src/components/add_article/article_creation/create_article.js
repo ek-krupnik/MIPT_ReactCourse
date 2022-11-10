@@ -41,6 +41,7 @@ export function CreateArticle () {
                 <button onClick={createPost} className={s.button}>
                     Create post
                 </button>
+            </div>
 
                 {ind.map((index) => 
                                 <Post title={infoName[index]}
@@ -50,7 +51,6 @@ export function CreateArticle () {
                                 comments={0}
                                 id={-1}/>)}
                 
-            </div>
         </>
         )
 }
