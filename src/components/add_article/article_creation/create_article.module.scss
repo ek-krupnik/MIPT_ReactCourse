@@ -1,3 +1,5 @@
+@import '../../vars.module.scss';
+
 .button {
     width: 200px;
     align-self: center;    
@@ -19,7 +21,7 @@
     width: 400px;
     height: 100px;
 
-    background-color: rgb(255, 224, 184);
+    background-color: $primary-button-color;
     align-self: center;
     border-radius: 10px;
 }

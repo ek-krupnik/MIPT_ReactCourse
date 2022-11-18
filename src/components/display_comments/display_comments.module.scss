@@ -1,7 +1,7 @@
 .comment {
     width: 600px;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
     display: flex;
     justify-content: start;
 }
@@ -10,8 +10,8 @@
     width: 20px;
     height: 20px;
 
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-top: 12px;
+    margin-left: 12px;
 
     border-width: 0ch;
     border-radius: 10%;
@@ -24,4 +24,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+
+    &_hidden {
+        display: none;
+    }
 }

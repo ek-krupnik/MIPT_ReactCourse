@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import s from "./create_article.module.css"
+import s from "./create_article.module.scss"
 import { ArticleForm } from '../articlle_form/add_article'
 import { Post } from '../../post/post'
 

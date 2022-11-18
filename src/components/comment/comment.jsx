@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import s from './comment.module.css'
+import s from './comment.module.scss'
 import { DisplayComment } from '../display_comments/display_comments'
 import { NotReadyData } from '../not_ready_data/not_ready_data'
 import { getComments } from '../../assets/pathces/get_comments'
