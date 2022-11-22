@@ -71,7 +71,7 @@
     
         margin-left: 10px;
         margin-right: 10px;
-        background-color: $primary-button-color;
+        background-color: $primary-light-button-color;
     }
 }
 
@@ -83,7 +83,7 @@
     border-width: 2px;
     border-color: rgb(221, 159, 44);
     border-radius: 5px;
-    background-color: $primary-button-color; 
+    background-color: $primary-light-button-color;
 }
 
 .comments {
@@ -104,7 +104,36 @@
     
         margin-left: 10px;
         margin-right: 10px;
-        background-color: $primary-button-color;
         align-self: center;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .comments_list_visible {
+        background-color: rgb(255, 253, 251);
+    }
+    .common_comments {
+        background-color: rgb(250, 237, 220);
+    }
+    .show_comment {
+        background-color: $primary-light-button-color;
+    }
+    .comment_counter {
+        background-color: $primary-light-button-color;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .comments_list_visible {
+        background-color: $primary-dark-button-color;
+    }
+    .common_comments {
+        background-color: rgb(98, 90, 131);
+    }
+    .show_comment {
+        background-color: $primary-dark-button-color;
+    }
+    .comment_counter {
+        background-color: $primary-dark-button-color;
     }
 }

@@ -27,9 +27,15 @@
     }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: dark) {
+    .App {
+        background-color: rgb(64, 57, 93);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .App {
+        background-color: rgb(255, 247, 238);
     }
 }
 

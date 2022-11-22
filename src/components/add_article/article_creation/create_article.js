@@ -12,7 +12,7 @@ export function CreateArticle () {
     const [infoText, setInfoText] = useState([])
     const [ind, setInd] = useState([])
 
-    const phrases = ["Enter article title", "Enter article description"]
+    const phrases = ["Enter article title...", "Enter article description..."]
     const [textNumber, setNumber] = useState(0)
 
     const onChangeName = event => {
@@ -35,8 +35,8 @@ export function CreateArticle () {
         <>
             <div className={s.input}>
 
-                <ArticleForm data={lineName} onChange={onChangeName} placeholder={"Enter article title"}/>
-                <ArticleForm data={lineText} onChange={onChangeText} placeholder={"Enter article description"}/>
+                <ArticleForm data={lineName} onChange={onChangeName} placeholder={"Enter article title..."}/>
+                <ArticleForm data={lineText} onChange={onChangeText} placeholder={"Enter article description..."}/>
 
                 <button onClick={createPost} className={s.button}>
                     Create post

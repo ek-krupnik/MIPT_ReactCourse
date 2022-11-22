@@ -1,11 +1,48 @@
 @import '../vars.module.scss';
 
-.all_common {
-    text-align: center;
-    background-color: rgb(255, 247, 238);
+@mixin text-style($arg) {
+    font-size: $arg;
+    color: rgb(0, 0, 0);
+}
+
+@mixin reaction($arg) {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url($arg);
+    background-size: cover;
+}
+
+@mixin counter-frame($arg) {
+    height: $arg * 40px;
+    width: $arg * 100px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@mixin flex-centered($arg) {
     display: flex;
-    flex-direction: column;
+    flex-direction: $arg;
     align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .image {
+        display: none;
+    }
+}
+
+.all_common {
+    @include flex-centered(column);
+    text-align: center;
 }
 
 .title {
@@ -15,24 +52,16 @@
 }
 
 .description {
-    color: black;
-    font-size: 30px;
+    @include text-style(30px);
     font-style: italic;
 }
 
 .counter {
-    font-size: 50px;
-    height: 80px;
-    width: 200px;
-
-    border-radius: 5%;
-    border-width: 5px;
-
-    margin-left: 10px;
-    margin-right: 10px;
+    @include text-style(50px);
+    @include counter-frame(2);
     
     &_color_common {
-        background-color: $primary-button-color;
+        background-color: $primary-light-button-color;
     }
 
     &_color_red {
@@ -45,14 +74,7 @@
 }
 
 .like {
-    height: 40px;
-    width: 40px;
-
-    border-radius: 5%;
-    border-width: 5px;
-
-    background-image: url('../../assets/images/like.png');
-    background-size: cover;
+    @include reaction('../../assets/images/like.png');
 
     &:hover {
         background-image: url('../../assets/images/like_set.png');
@@ -63,14 +85,7 @@
 }
 
 .dislike {
-    height: 40px;
-    width: 40px;
-
-    border-radius: 5%;
-    border-width: 5px;
-
-    background-image: url('../../assets/images/dislike.png');
-    background-size: cover;
+    @include reaction('../../assets/images/dislike.png');
 
     &:hover {
         background-image: url('../../assets/images/dislike_set.png');
@@ -100,10 +115,7 @@
 }
 
 .likes_construction {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    @include flex-centered(row);
     margin-top: 20px;
 }
 
@@ -114,14 +126,10 @@
 }
 
 .post_data {
+    @include flex-centered(column);
     top: 0;
     left: 0;
     position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }    
 
 .show_comment {
@@ -132,34 +140,37 @@
     border-width: 2px;
     border-color: rgb(221, 159, 44);
     border-radius: 5%;
-    background-color: $primary-button-color; 
+    background-color: $primary-light-button-color; 
 }
 
 .comments_buttons {
-    display: flex;  
-    justify-content: center;
+    @include flex-centered(row);
     margin-top: 20px;
 }
 
 .comment {
-    height: 40px;
-    width: 40px;
-
-    border-radius: 5%;
-    border-width: 5px;
-
-    background-image: url('../../assets/images/comment.png');
-    background-size: cover;
+    @include reaction('../../assets/images/comment.png');
 }
 
 .comment_counter {
-    font-size: 25px;
-    height: 40px;
-    width: 100px;
+    @include text-style(25px);
+    @include counter-frame(1);
+}
 
-    border-radius: 5%;
-    border-width: 5px;
+@media (prefers-color-scheme: light) {
+    .title {
+        color: rgb(255, 166, 0);
+    }
+    .counter_color_common {
+        background-color: $primary-light-button-color;
+    }
+}
 
-    margin-left: 10px;
-    margin-right: 10px;
+@media (prefers-color-scheme: dark) {
+    .title {
+        color: rgb(171, 111, 0);
+    }
+    .counter_color_common {
+        background-color: $primary-dark-button-color;
+    }
 }
