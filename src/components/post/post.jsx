@@ -19,31 +19,35 @@ export function Post({title,
 
     const like = () => {
         if (markerLiked) {
-            setCounter((counter) => {return counter - 1})
-            setMarkerLiked((marker) => {return false})
+            setCounter(counter => counter - 1);
+            setMarkerLiked(marker => false);
+            return;
         }
         if (!markerDisliked && !markerLiked) {
-            setCounter((counter) => {return counter + 1})
-            setMarkerLiked((marker) => {return true})
+            setCounter(counter => counter + 1);
+            setMarkerLiked(marker => true);
+            return;
         }
     }
 
     const dislike = () => {
         if (markerDisliked) {
-            setCounter((counter) => {return counter + 1})
-            setMarkerDisliked((marker) => {return false})
+            setCounter(counter => counter + 1);
+            setMarkerDisliked(marker => false);
+            return;
         }
         if (!markerDisliked && !markerLiked) {
-            setCounter((counter) => {return counter - 1})
-            setMarkerDisliked((marker) => {return true})
+            setCounter(counter => counter - 1);
+            setMarkerDisliked(marker => true);   
+            return;
         }
     }
 
     return (
         <>
 
-            <div className={s.all_common}>
-                <div className={s.post_data}>
+            <div className={s.allCommon}>
+                <div className={s.postData}>
                     <div className={s.title}>
                         {title}
                     </div>
@@ -57,7 +61,7 @@ export function Post({title,
                     </div>
                 </div>
 
-                <div className={s.likes_construction}>
+                <div className={s.likesConstruction}>
 
                     <div className={s.dislike} onClick={dislike}>
                         <span className={s.tooltiptext}> Seriously? </span>

@@ -1,4 +1,4 @@
-.all_common {
+.allCommon {
     text-align: center;
     background-color: rgb(255, 247, 238);
     display: flex;
@@ -69,7 +69,7 @@
     background-image: url('../../assets/images/dislike_red.png');
 }
 
-.likes_construction {
+.likesConstruction {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@
     border-width: 5px;
 }
 
-.post_data {
+.postData {
     top: 0;
     left: 0;
     position: relative;
@@ -114,7 +114,7 @@
     visibility: visible;
 }
 
-.show_comment {
+.show-comment {
     width: 150px;
     height: 40px;
     align-self: center;
@@ -125,13 +125,13 @@
     background-color: rgb(255, 242, 223); 
 }
 
-.comments_buttons {
+.comments-buttons {
     display: flex;  
     justify-content: center;
     margin-top: 20px;
 }
 
-.comment_counter {
+.comment-counter {
     font-size: 25px;
     height: 40px;
     width: 100px;
