@@ -1,0 +1,25 @@
+.button {
+    width: 200px;
+    align-self: center;    
+    border-radius: 5%;
+    border-width: 2px;
+
+    margin-top: 15px;
+    border-color: rgb(167, 167, 167);
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    width: 400px;
+    height: 100px;
+
+    background-color: rgb(255, 224, 184);
+    align-self: center;
+    border-radius: 10px;
+}
