@@ -20,12 +20,12 @@ export function Post({title,
     const like = () => {
         if (markerLiked) {
             setCounter(counter => counter - 1);
-            setMarkerLiked(marker => false);
+            setMarkerLiked(false);
             return;
         }
         if (!markerDisliked && !markerLiked) {
             setCounter(counter => counter + 1);
-            setMarkerLiked(marker => true);
+            setMarkerLiked(true);
             return;
         }
     }
@@ -33,12 +33,12 @@ export function Post({title,
     const dislike = () => {
         if (markerDisliked) {
             setCounter(counter => counter + 1);
-            setMarkerDisliked(marker => false);
+            setMarkerDisliked(false);
             return;
         }
         if (!markerDisliked && !markerLiked) {
             setCounter(counter => counter - 1);
-            setMarkerDisliked(marker => true);   
+            setMarkerDisliked(true);   
             return;
         }
     }
