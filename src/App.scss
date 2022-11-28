@@ -1,0 +1,48 @@
+.App {
+    text-align: center;
+    background-color: rgb(255, 247, 238);
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+
+    &-logo {
+        height: 40vmin;
+        pointer-events: none;
+    }
+
+    &-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+
+    &-link {
+        color: #61dafb;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .App {
+        background-color: rgb(64, 57, 93);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .App {
+        background-color: rgb(255, 247, 238);
+    }
+}
+
+.common {
+
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-direction: column;
+}

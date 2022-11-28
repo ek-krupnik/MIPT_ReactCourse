@@ -1,0 +1,176 @@
+@import '../vars.module.scss';
+
+@mixin text-style($arg) {
+    font-size: $arg;
+    color: rgb(0, 0, 0);
+}
+
+@mixin reaction($arg) {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url($arg);
+    background-size: cover;
+}
+
+@mixin counter-frame($arg) {
+    height: $arg * 40px;
+    width: $arg * 100px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@mixin flex-centered($arg) {
+    display: flex;
+    flex-direction: $arg;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .image {
+        display: none;
+    }
+}
+
+.all_common {
+    @include flex-centered(column);
+    text-align: center;
+}
+
+.title {
+    color: rgb(255, 166, 0);
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.description {
+    @include text-style(30px);
+    font-style: italic;
+}
+
+.counter {
+    @include text-style(50px);
+    @include counter-frame(2);
+    
+    &_color_common {
+        background-color: $primary-light-button-color;
+    }
+
+    &_color_red {
+        background-color: rgb(242, 181, 183);
+    }
+
+    &_color_green {
+        background-color: rgb(196, 242, 181);
+    }
+}
+
+.like {
+    @include reaction('../../assets/images/like.png');
+
+    &:hover {
+        background-image: url('../../assets/images/like_set.png');
+    }
+    &:active {
+        background-image: url('../../assets/images/like_green.png');
+    }
+}
+
+.dislike {
+    @include reaction('../../assets/images/dislike.png');
+
+    &:hover {
+        background-image: url('../../assets/images/dislike_set.png');
+
+        .tooltiptext {
+            visibility: visible;
+        }
+    }
+    &:active {
+        background-image: url('../../assets/images/dislike_red.png');
+    }
+
+    .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        height: 25px;
+
+        background-color: rgb(61, 61, 61);
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        border-radius: 8%;
+
+        text-align: center;
+        position: absolute;
+        z-index: 1;
+    }
+}
+
+.likes_construction {
+    @include flex-centered(row);
+    margin-top: 20px;
+}
+
+.image img {
+    height: 600px;
+    border-radius: 10%;
+    border-width: 5px;
+}
+
+.post_data {
+    @include flex-centered(column);
+    top: 0;
+    left: 0;
+    position: relative;
+}    
+
+.show_comment {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+
+    border-width: 2px;
+    border-color: rgb(221, 159, 44);
+    border-radius: 5%;
+    background-color: $primary-light-button-color; 
+}
+
+.comments_buttons {
+    @include flex-centered(row);
+    margin-top: 20px;
+}
+
+.comment {
+    @include reaction('../../assets/images/comment.png');
+}
+
+.comment_counter {
+    @include text-style(25px);
+    @include counter-frame(1);
+}
+
+@media (prefers-color-scheme: light) {
+    .title {
+        color: rgb(255, 166, 0);
+    }
+    .counter_color_common {
+        background-color: $primary-light-button-color;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .title {
+        color: rgb(171, 111, 0);
+    }
+    .counter_color_common {
+        background-color: $primary-dark-button-color;
+    }
+}

@@ -1,0 +1,139 @@
+@import '../vars.module.scss';
+
+.button {
+    width: 200px;
+    align-self: center;    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(167, 167, 167);
+}
+
+.comments_list {
+
+    &_hidden {
+        display: none;
+    }
+
+    &_visible {
+        display: flex;
+        background-color: rgb(255, 253, 251);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        height: 200px;
+        width: 600px;
+        margin-left: auto;
+        margin-right: 5%;
+        flex-direction: column;
+    }
+}
+
+.common_comments {
+    background-color: rgb(250, 237, 220);
+    width: 600px;
+    align-self: center;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.comment {
+
+    &_line_hidden {
+        display: none;
+    }
+
+    &_line_visible {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 35px;
+        padding: 10px;
+    }
+
+    &_image {
+        height: 40px;
+        width: 40px;
+
+        border-radius: 5%;
+        border-width: 5px;
+
+        background-image: url('../../assets/images/comment.png');
+        background-size: cover;
+    }
+
+    &_counter {
+        font-size: 25px;
+        height: 40px;
+        width: 100px;
+    
+        border-radius: 5px;
+        border-width: 5px;
+    
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: $primary-light-button-color;
+    }
+}
+
+.show_comment {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+
+    border-width: 2px;
+    border-color: rgb(221, 159, 44);
+    border-radius: 5px;
+    background-color: $primary-light-button-color;
+}
+
+.comments {
+
+    &_buttons {
+        display: flex;  
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    &_number {
+        font-size: 50px;
+        height: 80px;
+        width: 200px;
+    
+        border-radius: 5px;
+        border-width: 5px;
+    
+        margin-left: 10px;
+        margin-right: 10px;
+        align-self: center;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .comments_list_visible {
+        background-color: rgb(255, 253, 251);
+    }
+    .common_comments {
+        background-color: rgb(250, 237, 220);
+    }
+    .show_comment {
+        background-color: $primary-light-button-color;
+    }
+    .comment_counter {
+        background-color: $primary-light-button-color;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .comments_list_visible {
+        background-color: $primary-dark-button-color;
+    }
+    .common_comments {
+        background-color: rgb(98, 90, 131);
+    }
+    .show_comment {
+        background-color: $primary-dark-button-color;
+    }
+    .comment_counter {
+        background-color: $primary-dark-button-color;
+    }
+}

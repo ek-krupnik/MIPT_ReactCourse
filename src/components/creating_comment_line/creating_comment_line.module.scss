@@ -1,0 +1,15 @@
+@import '../vars.module.scss';
+
+.comment_line {
+    border: 3px 2px rgb(205, 205, 205);
+    width: 400px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    &:focus {
+        outline-width: 0;
+        border-color: $input-border-color;
+        background-color: $input-background-color;
+    }
+}
+

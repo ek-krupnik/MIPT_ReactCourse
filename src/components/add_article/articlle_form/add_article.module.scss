@@ -1,0 +1,14 @@
+@import '../../vars.module.scss';
+
+.article_input {
+    border-color: rgb(205, 205, 205);
+    border-radius: 5px;
+    width: 300px;
+    margin: 5px;
+
+    &:focus {
+        outline-width: 0;
+        border-color: $input-border-color;
+        background-color: $input-background-color;
+    }
+}

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import s from './article.module.css'
+import s from './article.module.scss'
 
 import { Post } from '../post/post'
 import { NotReadyData } from '../not_ready_data/not_ready_data'

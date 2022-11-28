@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Comment} from "../comment/comment"
-import s from "./data_change.module.css"
+import s from "./data_change.module.scss"
+import classNames from 'classnames/bind'
 import { CommentLine } from '../creating_comment_line/creating_comment_line'
 import { DisplayComment } from '../display_comments/display_comments'
 
@@ -9,9 +10,11 @@ export function DataChanges({id, commentsNum}) {
     const [counter, setCounter] = useState(commentsNum)
     const [arr, setArr] = useState([])
     const [line, setLine] = useState('')
-    const [markerComment, setMarkerComment] = useState(false)
+    const [markerComment, setMarkerComment] = useState(true)
 
-    const visibility = markerComment ? "none" : "flex"
+    const cx = classNames.bind(s);
+
+    const name_style = markerComment ? "hidden" : "visible"
     const buttonText = markerComment ? "ShowComments" : "HideComments"
 
     const onChange = event => {
@@ -31,7 +34,7 @@ export function DataChanges({id, commentsNum}) {
     return (
         <>
             <div className={s.comments_buttons}>
-                <div className={s.comment}></div>
+                <div className={s.comment_image}></div>
                 <div className={s.comment_counter}>
                     {counter}
                 </div>
@@ -41,17 +44,17 @@ export function DataChanges({id, commentsNum}) {
             </div>
 
             <div className={s.common_comments}>
-                <div className={s.comments_list} style={{display : visibility}}>
+                <div className={cx([`comments_list_${name_style}`])}>
                     {arr.map(item => (<DisplayComment commentId={-1}
                                                       articleId={id}
                                                       text={item}
                                                       name={'Anonimus'}
-                                                      visibility={visibility}/>))}
+                                                      visibility={!markerComment}/>))}
                     
-                    <Comment articleId={id} visibility={visibility}/>
+                    <Comment articleId={id} visibility={!markerComment}/>
                 </div>
 
-                <div className={s.comment_line} style={{display : visibility}}>
+                <div className={cx([`comment_line_${name_style}`])}>
                     <CommentLine data={line} onChange={onChange} />
                     <button onClick={pushLine} className={s.button}>
                         Leave comment

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import s from './creating_comment_line.module.css'
+import s from './creating_comment_line.module.scss'
 export const CommentLine = ({data, onChange}) => (
 
     <input

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import s from "./create_article.module.css"
+import s from "./create_article.module.scss"
 import { ArticleForm } from '../articlle_form/add_article'
 import { Post } from '../../post/post'
 
@@ -12,7 +12,7 @@ export function CreateArticle () {
     const [infoText, setInfoText] = useState([])
     const [ind, setInd] = useState([])
 
-    const phrases = ["Enter article title", "Enter article description"]
+    const phrases = ["Enter article title...", "Enter article description..."]
     const [textNumber, setNumber] = useState(0)
 
     const onChangeName = event => {
@@ -35,8 +35,8 @@ export function CreateArticle () {
         <>
             <div className={s.input}>
 
-                <ArticleForm data={lineName} onChange={onChangeName} placeholder={"Enter article title"}/>
-                <ArticleForm data={lineText} onChange={onChangeText} placeholder={"Enter article description"}/>
+                <ArticleForm data={lineName} onChange={onChangeName} placeholder={phrases[0]}/>
+                <ArticleForm data={lineText} onChange={onChangeText} placeholder={phrases[1]}/>
 
                 <button onClick={createPost} className={s.button}>
                     Create post

@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import {Articles} from './components/article/article'
 import {CreateArticle} from './components/add_article/article_creation/create_article'
 
