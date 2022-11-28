@@ -35,8 +35,8 @@ export function CreateArticle () {
         <>
             <div className={s.input}>
 
-                <ArticleForm data={lineName} onChange={onChangeName} placeholder={"Enter article title..."}/>
-                <ArticleForm data={lineText} onChange={onChangeText} placeholder={"Enter article description..."}/>
+                <ArticleForm data={lineName} onChange={onChangeName} placeholder={phrases[0]}/>
+                <ArticleForm data={lineText} onChange={onChangeText} placeholder={phrases[1]}/>
 
                 <button onClick={createPost} className={s.button}>
                     Create post
