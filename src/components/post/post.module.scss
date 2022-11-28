@@ -157,7 +157,7 @@
     @include counter-frame(1);
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: zz) {
     .title {
         color: rgb(255, 166, 0);
     }

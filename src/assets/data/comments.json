@@ -1,32 +1,44 @@
 [
-    {
-      "author": "Dipper",
-      "articleId": 1,
-      "text": "Well, nice"
-    },
-    {
-      "author": "Mabel",
-      "articleId": 2,
-      "text": "IT IS THE BEST ANIMAL EVER"
-    },
-    {
-      "author": "Soos",
-      "articleId": 3,
-      "text": "Wow, you're a cute one"
-    },
-    {
-      "author": "Stanford",
-      "articleId": 2,
-      "text": "What do I see here?"
-    },
-    {
-      "author": "Stanly",
-      "articleId": 5,
-      "text": "I don't see anything here"
-    },
-    {
-      "author": "Shmebulok",
-      "articleId": 4,
-      "text": "Shmebulok"
-    }
-  ]
+  {
+    "author": "Dipper",
+    "articleId": 1,
+    "text": "Well, nice",
+    "date": "11.12.2022",
+    "id": 1
+  },
+  {
+    "author": "Mabel",
+    "articleId": 2,
+    "text": "IT IS THE BEST ANIMAL EVER",
+    "date": "20.08.2201",
+    "id": 1
+  },
+  {
+    "author": "Soos",
+    "articleId": 3,
+    "text": "Wow, you're a cute one",
+    "date": "05.04.2001",
+    "id": 1
+  },
+  {
+    "author": "Stanford",
+    "articleId": 2,
+    "text": "What do I see here?",
+    "date": "10.10.1010",
+    "id": 2
+  },
+  {
+    "author": "Stanly",
+    "articleId": 5,
+    "text": "I don't see anything here",
+    "date": "10.08.5001",
+    "id": 1
+  },
+  {
+    "author": "Shmebulok",
+    "articleId": 4,
+    "text": "Shmebulok",
+    "date": "28.01.1984",
+    "id": 1
+  }
+]
