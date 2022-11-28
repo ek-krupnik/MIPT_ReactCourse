@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Duck",
+        "text": "The best bird in the world. Feed only with special food!",
+        "currentLikes": 999,
+        "image": "https://i.artfile.ru/2048x1357_925746_[www.ArtFile.ru].jpg"
+    },
+    {
+        "title": "Racoon",
+        "text": "Raccoon. Not the best candidate for the role of a pet, but it just rocks",
+        "currentLikes": 200,
+        "image": "https://cdn.fishki.net/upload/post/2021/03/16/3662483/ebe9616776d8d6b57289932200fb03f0.jpg"
+    },
+    {
+        "title": "Lama",
+        "text": "Just cool and beautiful",
+        "currentLikes": 300,
+        "image": "http://zabavniks.com/wp-content/uploads/Foto_zhivotnogo_lama_13_31042755.jpg"
+    },
+    {
+        "title": "Alpaca",
+        "text": "Many often confuse them with Lamas, but true connoisseurs know the difference",
+        "currentLikes": 500,
+        "image": "https://tabakur77.ru/wp-content/uploads/8/4/2/8428b2ea893dd9144778bd74366dd04b.jpeg"
+    },
+    {
+        "title": "Capybara",
+        "text": "Needs no introduction",
+        "currentLikes": 999,
+        "image": "https://www.myconfinedspace.com/wp-content/uploads/2021/05/if5sgjikupw61.jpg"
+    }
+]

@@ -1,0 +1,156 @@
+.allCommon {
+    text-align: center;
+    background-color: rgb(255, 247, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: rgb(255, 166, 0);
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.description {
+    color: black;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.counter {
+    font-size: 50px;
+    height: 80px;
+    width: 200px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 235, 205);
+}
+
+.like {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url('../../assets/images/like.png');
+    background-size: cover;
+}
+
+.like:hover {
+    background-image: url('../../assets/images/like_set.png');
+}
+
+.like:active {
+    background-image: url('../../assets/images/like_green.png');
+}
+
+.dislike {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url('../../assets/images/dislike.png');
+    background-size: cover;
+}
+
+.dislike:hover {
+    background-image: url('../../assets/images/dislike_set.png');
+}
+
+.dislike:active {
+    background-image: url('../../assets/images/dislike_red.png');
+}
+
+.likesConstruction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+}
+
+.image img {
+    height: 600px;
+    border-radius: 10%;
+    border-width: 5px;
+}
+
+.postData {
+    top: 0;
+    left: 0;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dislike .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    height: 25px;
+
+    background-color: rgb(61, 61, 61);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 8%;
+
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+    
+
+.dislike:hover .tooltiptext {
+    visibility: visible;
+}
+
+.show-comment {
+    width: 150px;
+    height: 40px;
+    align-self: center;
+
+    border-width: 2px;
+    border-color: rgb(221, 159, 44);
+    border-radius: 5%;
+    background-color: rgb(255, 242, 223); 
+}
+
+.comments-buttons {
+    display: flex;  
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.comment-counter {
+    font-size: 25px;
+    height: 40px;
+    width: 100px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(255, 235, 205);
+}
+
+.comment {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 5%;
+    border-width: 5px;
+
+    background-image: url('../../assets/images/comment.png');
+    background-size: cover;
+}
