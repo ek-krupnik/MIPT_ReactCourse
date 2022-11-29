@@ -48,7 +48,6 @@
 .title {
     color: rgb(255, 166, 0);
     font-size: 50px;
-    margin-top: 50px;
 }
 
 .description {
@@ -160,6 +159,29 @@
 .comment_counter {
     @include text-style(25px);
     @include counter-frame(1);
+}
+
+.text_with_changer {
+    display: flex;
+}
+
+.changer {
+    @include reaction('../../assets/images/edit.png');
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+
+    border-width: 0px;
+    margin-left: 10px;
+
+    align-self: center;
+}
+
+.change_line {
+
+    &_hidden {
+        display: none;
+    }
 }
 
 @media (prefers-color-scheme: zz) {

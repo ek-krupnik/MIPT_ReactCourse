@@ -60,6 +60,27 @@
     align-self: center;
     margin-top: 3px;
     border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.change_comment_button {
+    background-image: url('../../assets/images/edit.png');
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+
+    border-width: 0px;
+    border-radius: 5%;
+    background-size: cover;
+
+    align-self: center;
+}
+
+.change_line {
+
+    &_hidden {
+        display: none;
+    }
 }
 
 .comment {
