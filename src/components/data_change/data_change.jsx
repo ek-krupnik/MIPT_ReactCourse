@@ -10,24 +10,26 @@ import { getComments } from '../../assets/pathces/get_comments'
 export function DataChanges({id, commentsNum}) {
 
     const [counter, setCounter] = useState(commentsNum)
+    const [maxCounter, setMaxCounter] = useState(commentsNum)
+
     const [line, setLine] = useState('')
     const [data, setData] = useState([])
-    const [markerComment, setMarkerComment] = useState(true)
-    const [currentID, setCurrentId] = useState(0)
+    const [markerComment, setMarkerComment] = useState(false)
 
     const [commentsVisability, setCommentsVisability] = useState({})
 
     const cx = classNames.bind(s);
 
-    const name_style = markerComment ? "hidden" : "visible"
-    const buttonText = markerComment ? "ShowComments" : "HideComments"
+    const name_style = !markerComment ? "hidden" : "visible"
+    const buttonText = !markerComment ? "ShowComments" : "HideComments"
 
     useEffect(() => {
         getComments(id).then(fetchedData => setData(fetchedData))
     }, [])
 
-    const hideComment = () => {
-        setCommentsVisability(data => ({...data, [currentID]: true}))
+    const hideComment = (itemID) => {
+        setCommentsVisability(data => ({...data, [itemID]: true}))
+        setCounter(counter => counter - 1)
     }
 
     const onChange = event => {
@@ -35,18 +37,45 @@ export function DataChanges({id, commentsNum}) {
         setLine(value)
     }
 
-    const calculateVisability = (id) => {
-        setCurrentId(id);
-        return commentsVisability[id] && markerComment;
+    const calculateVisability = (itemID) => {
+        if (itemID in commentsVisability) {
+            return false
+        }
+        return markerComment
     }
 
     const pushLine = () => {
-        setData([...data, {commentId: -1, text: line, author: 'Anonimus', date: '12.12.1222'}])
+        setData([...data, {id: maxCounter + 1, text: line, author: 'Anonimus', date: '12.12.1222', likes: 0}])
         setCounter(counter => counter + 1)
+        setMaxCounter(counter => counter + 1)
     }
 
     const showComment = () => {
         setMarkerComment(marker => !marker)
+    }
+
+    const sortLikes = () => {
+        const keyMap = data.map(
+            (comment) => {return [comment.likes, comment]}
+        )
+
+        keyMap.sort(
+            (first, second) => {return first[0] - second[0]}
+        )
+
+        setData(keyMap.map(item => item[1]))
+    }
+
+    const sortDate = () => {
+        const keyMap = data.map(
+            (comment) => {return [comment.date, comment]}
+        )
+
+        keyMap.sort(
+            (first, second) => {return new Date(first[0]) - new Date(second[0])}
+        )
+
+        setData(keyMap.map(item => item[1]))
     }
 
     return (
@@ -61,19 +90,30 @@ export function DataChanges({id, commentsNum}) {
                 </button>
             </div>
 
+            <div className={cx('sort_button_common', 
+                               {sort_button_common_hidden: !markerComment})}>
+                <button className={s.sort_button} onClick={sortLikes}/>
+                <button className={s.sort_button} onClick={sortDate}/>
+            </div>
+
             <div className={s.common_comments}>
                 <div className={cx([`comments_list_${name_style}`])}>
                     <>
                     {
                         (data.length > 0)
                         ? data.map(item => 
-                                        <div className={cx('common_comment_line', {common_comment_line_hidden: calculateVisability(item.id)})}>
-                                            {/* <button className={s.delete_comment_button} onClick={hideComment}></button> */}
+                                        <div className={cx('common_comment_line', 
+                                                           {common_comment_line_hidden: !calculateVisability(item.id)})}>
+
+                                            <button className={s.delete_comment_button} 
+                                                    onClick={() => hideComment(item.id)}></button>
+
                                             <DisplayComment commentId={item.articleId}
                                                             articleId={id}
                                                             text={item.text}
                                                             name={item.author}
-                                                            date={item.date}/>
+                                                            date={item.date}
+                                                            likes={item.likes}/>
                                         </div>)
                         : <NotReadyData/>
                     }

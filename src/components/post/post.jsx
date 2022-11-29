@@ -8,12 +8,13 @@ export function Post({title,
                       likes,
                       imageUrl,
                       comments,
-                      id}
+                      id,
+                      date}
                     ){
 
     const cx = classNames.bind(s);
     
-    const [counter, setCounter] = useState(likes)
+    const [counter, setCounter] = useState(0)
     const [markerLiked, setMarkerLiked] = useState(false)
     const [markerDisliked, setMarkerDisliked] = useState(false)
     
@@ -49,6 +50,9 @@ export function Post({title,
                     <div className={s.title}>
                         {title}
                     </div>
+                    <div className={s.date}>
+                        {date}
+                    </div>
 
                     <div className={s.description}>
                         {description}
@@ -66,7 +70,7 @@ export function Post({title,
                     </div>
 
                     <div className={cx("counter", [`counter_color_${color}`])}>
-                        {counter}
+                        {counter + likes}
                     </div>
 
                     <div className={s.like} onClick={like}></div>

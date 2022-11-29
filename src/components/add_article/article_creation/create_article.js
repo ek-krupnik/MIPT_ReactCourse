@@ -49,7 +49,8 @@ export function CreateArticle () {
                                 likes={0}
                                 imageUrl={"https://basetop.ru/wp-content/uploads/2018/10/fenek-696x392.jpg"}
                                 comments={0}
-                                id={-1}/>)}
+                                id={-1}
+                                date={"today"}/>)}
                 
         </>
         )

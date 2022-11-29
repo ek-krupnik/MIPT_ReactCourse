@@ -56,6 +56,11 @@
     font-style: italic;
 }
 
+.date {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
 .counter {
     @include text-style(50px);
     @include counter-frame(2);
