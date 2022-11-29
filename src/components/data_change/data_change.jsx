@@ -17,7 +17,6 @@ export function DataChanges({id, commentsNum}) {
     const [markerComment, setMarkerComment] = useState(false)
 
     const [commentsVisability, setCommentsVisability] = useState({})
-    // const [commentChanging, setCommentChanging] = useState({})
 
     const cx = classNames.bind(s);
 
@@ -79,22 +78,6 @@ export function DataChanges({id, commentsNum}) {
         setData(keyMap.map(item => item[1]))
     }
 
-    // const calculateChangeVisability = (itemID) => {
-    //     return !(itemID in commentChanging)
-    // }
-
-    // const changeCommentShow  = (itemID) => {
-    //     if (itemID in commentChanging) {
-    //         setCommentChanging(data => ({...data, [itemID]: false}))
-    //         return
-    //     }
-    //     setCommentChanging(data => ({...data, [itemID]: true}))
-    // }
-
-    // const changeComment = () =>  {
-        
-    // }
-
     return (
         <>
             <div className={s.comments_buttons}>
@@ -131,21 +114,6 @@ export function DataChanges({id, commentsNum}) {
                                                             name={item.author}
                                                             date={item.date}
                                                             likes={item.likes}/>
-                                            
-                                            {/* <button className={s.change_comment_button} 
-                                                    onClick={() => changeCommentShow(item.id)}></button>
-                                            
-                                            <div className={cx("change_line", {change_line_hidden: !calculateChangeVisability(item.id)})}>
-                                                <input
-                                                        className={s.change_line}
-                                                        value={line}
-                                                        onChange={onChange}
-                                                        placeholder={"Enter new comment..."}
-                                                />
-                                                <button onClick={changeComment} className={s.button}>
-                                                    Change
-                                                </button>
-                                            </div> */}
                                         </div>)
                         : <NotReadyData/>
                     }

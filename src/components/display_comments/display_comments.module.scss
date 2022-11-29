@@ -79,3 +79,23 @@
         background-color: rgb(255, 245, 228);
     }
 }
+
+.change_comment_button {
+    background-image: url('../../assets/images/edit.png');
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+
+    border-width: 0px;
+    border-radius: 5%;
+    background-size: cover;
+
+    align-self: center;
+}
+
+.change_line {
+
+    &_hidden {
+        display: none;
+    }
+}

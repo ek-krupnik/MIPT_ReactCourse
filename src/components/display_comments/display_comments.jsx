@@ -5,6 +5,9 @@ import classNames from 'classnames/bind'
 export function DisplayComment({commentId, articleId, text, name, date, likes}) {
     
     const [counter, setCounter] = useState(0);
+    const [line, setLine] = useState('')
+    const [commentNew, setCommentNew] = useState(text)
+    const [markerChangeVisible, setMarkerChangeVisible] = useState(false)
 
     const cx = classNames.bind(s);
 
@@ -16,6 +19,20 @@ export function DisplayComment({commentId, articleId, text, name, date, likes}) 
         setCounter(counter => counter - 1);
     }
 
+    const changeCommentShow  = () => {
+        setMarkerChangeVisible(marker => !marker)
+    }
+
+    const changeComment = () =>  {
+        setCommentNew(line)
+        setMarkerChangeVisible(marker => !marker)
+    }
+
+    const onChange = event => {
+        const { value } = event.target
+        setLine(value)
+    }
+
     return (
         <>
             <div className={s.display_comment}>
@@ -24,7 +41,7 @@ export function DisplayComment({commentId, articleId, text, name, date, likes}) 
                         {name}
                     </div>
                     <div className={s.comment_text}>
-                        {text}
+                        {commentNew}
                     </div>
                 </div>
                 <div className={s.comment_vote}>
@@ -37,6 +54,21 @@ export function DisplayComment({commentId, articleId, text, name, date, likes}) 
                 <div className={s.comment_date}>
                     {date}
                 </div>
+            </div>
+
+            <button className={s.change_comment_button} 
+                    onClick={() => changeCommentShow()}></button>
+            
+            <div className={cx("change_line", {change_line_hidden: !markerChangeVisible})}>
+                <input
+                        className={s.change_line}
+                        value={line}
+                        onChange={onChange}
+                        placeholder={"Enter new comment..."}
+                />
+                <button onClick={changeComment} className={s.button}>
+                    Change
+                </button>
             </div>
         </>
     )
